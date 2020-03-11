@@ -6,7 +6,7 @@ class Burger < ApplicationRecord
         else 
             @json = @product.nutriments.to_hash
         end
-    
+        
         return @json
     end
 end
