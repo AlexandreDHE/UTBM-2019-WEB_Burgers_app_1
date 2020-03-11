@@ -25,5 +25,16 @@
   <%= @burger.code %>
 </p>
 
+<table width="100%" border="1" cellspacing="1" cellpadding="5" style="margin-bottom: 2%">
+  <tr>
+    <td> Nutriments </td>
+    <td> Values </td>
+  </tr>
+  <tr>
+    <td>Ligne 2 colonne 1</td>
+    <td><%= @burger.nutriments(@burger.code) %></td>
+  </tr>
+</table>
+
 <%= link_to 'Edit', edit_burger_path(@burger) %> |
 <%= link_to 'Back', burgers_path %>
