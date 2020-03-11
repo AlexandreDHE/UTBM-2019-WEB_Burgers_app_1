@@ -30,10 +30,12 @@
     <td> Nutriments </td>
     <td> Values </td>
   </tr>
-  <tr>
-    <td>Ligne 2 colonne 1</td>
-    <td><%= @burger.nutriments(@burger.code) %></td>
-  </tr>
+  <% @burger.nutriments(@burger.code).each do |nutri| %>
+    <tr>
+      <td><%= nutri[0] %></td>
+      <td><%= nutri[1] %></td>
+    </tr>
+  <% end %>
 </table>
 
 <%= link_to 'Edit', edit_burger_path(@burger) %> |

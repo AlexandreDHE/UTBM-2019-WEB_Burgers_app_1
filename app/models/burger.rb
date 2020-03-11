@@ -1,7 +1,7 @@
 class Burger < ApplicationRecord
     def nutriments(code)
-        require 'openfoodfacts'
         product = Openfoodfacts::Product.get(code, locale: 'fr')
-        return code
+        json = product.nutriments.to_hash
+        return json
     end
 end
